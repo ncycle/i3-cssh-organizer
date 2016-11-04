@@ -1,4 +1,5 @@
 #/usr/bin/env python
+# $mod+Enter, $mod+Enter, $mod+h, $mod+Enter, ctrl-D: produces a container with only one node
 
 import i3
 import time
