@@ -55,29 +55,23 @@ for leaf in leaves:
     i3.move('scratchpad')
 
 i3.focus(con_id=workspace['id'])
-i3.layout('splith')
-first_left = left.pop(0)
-revisualize(first_left, workspace['name'])
-first_right = right.pop(0)
-revisualize(first_right, workspace['name'])
-
-time.sleep(5)
-
-i3.focus(con_id=first_left['id'])
 i3.layout('splitv')
-time.sleep(5)
 for leaf in left:
     revisualize(leaf, workspace['name'])
 
+first_right = right.pop(0)
+revisualize(first_right, workspace['name'])
+i3.move('right')
+i3.split('v')
 i3.focus(con_id=first_right['id'])
-i3.layout('splitv')
-
-time.sleep(5)
 for leaf in right:
     revisualize(leaf, workspace['name'])
 
+
 for leaf in extra:
     revisualize(leaf, workspace['name'])
+    i3.move('down')
+    i3.resize('set height 80px')
 
 #
 #
