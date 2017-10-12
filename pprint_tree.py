@@ -14,8 +14,9 @@ while True:
         workspace_name = scanContainer['name']
         break;
     scanContainer = i3.parent(scanContainer['id'])
-print([node['name'] for node in scanContainer['nodes']])
-pp.pprint(scanContainer['nodes'])
+#print([node['name'] for node in scanContainer['nodes']])
+#pp.pprint(scanContainer['nodes'])
+pp.pprint(scanContainer)
 
 
 exit()

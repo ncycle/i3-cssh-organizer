@@ -21,8 +21,6 @@ def revisualize(node, workspace_name):
     i3.move('to workspace ' + workspace_name)
     i3.floating('disable')
 
-    
-
 currentWindow = i3.filter(focused=True)[0]
 workspace = get_workspace(currentWindow)
 
@@ -71,7 +69,11 @@ for leaf in right:
 for leaf in extra:
     revisualize(leaf, workspace['name'])
     i3.move('down')
-    i3.resize('set height 80px')
+    shrinkable = True
+    while shrinkable:
+        response = i3.resize('shrink height 10 px or 10 ppt')
+        shrinkable = response[0]
+    print(leaf['rect']['height'])
 
 #
 #
